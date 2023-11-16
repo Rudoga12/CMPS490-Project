@@ -9,14 +9,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usernameInput = $_POST["username"];
     $emailInput = $_POST["email"];
     $passwordInput = $_POST["password"];
-
+    
     // Hash the password (for security)
     $hashedPassword = password_hash($passwordInput, PASSWORD_DEFAULT);
 
+    
+
     // Database connection settings
-    $servername = "34.72.210.207"; // Your database server's IP address or hostname
+    $servername = "localhost"; // Your database server's IP address or hostname
     $dbUsername = "root";           // Your MySQL username
-    $dbPassword = "";               // Your MySQL password
+    $dbPassword = "fall23";               // Your MySQL password
     $dbname = "users";              // Your database name
 
     // Create a connection to the database
