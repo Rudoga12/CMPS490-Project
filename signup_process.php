@@ -25,20 +25,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn = new mysqli($servername, $dbUsername, $dbPassword, $dbname);
 
     // Check the connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    // SQL query to insert user data into the database
-    $sql = "INSERT INTO UserTable (userName, userEmail, userPassword) VALUES ('$usernameInput', '$emailInput', '$hashedPassword')";
+    $sql = "INSERT INTO UserTable (userName, userEmail, userPassword, userPoints) VALUES ('$usernameInput', '$emailInput', '$hashedPassword', 100)";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Registration successful. You can now log in.";
+        echo "Registration successful. You gained 100 points.";
+        // Add a button to go to MyAccount.html
+        echo '<form action="MyAccount.html" method="get">';
+        echo '<button type="submit">Go to My Account</button>';
+        echo '</form>';
+
+        // Close the database connection
+        $conn->close();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
-    // Close the database connection
-    $conn->close();
 }
 ?>
