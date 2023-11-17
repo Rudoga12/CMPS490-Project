@@ -1,3 +1,13 @@
+<?php
+// Start the PHP session
+session_start();
+
+// Check if a username is set in the session
+if(isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+}
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,14 +23,23 @@
         <div class="navbar">
             <img src="running-icon-22.png" class="logo">
             <ul>
-                <li> <a href="Index.html">Home</a> </li>
-                <li> <a href="MyAccount.html">My Account</a> </li>
-                <li> <a href="Donate.html">Donate</a> </li>
-                <li> <a href="PointSystem.html">Point System</a> </li>
-                <li> <a href="Merchandise.html">Merchandise</a> </li>
-                <li> <a href="RaceResults.html">Race Results</a> </li>
-                <li> <a href="ContactUs.html">Contact Us</a> </li>
-                <li> <a href="Cart.html">Cart</a> </li>
+                <li> <a href="Index.php">Home</a> </li>
+                <?php
+                // Check if the username is set in the session
+                if(isset($username)) {
+                    // Display My Account with the username if set
+                    echo '<li> <a href="MyAccount.php?username=' . urlencode($username) . '">My Account</a></li>';
+                } else {
+                    // Display the regular link if not set
+                    echo '<li> <a href="MyAccount.php">My Account</a> </li>';
+                }
+                ?>
+                <li> <a href="Donate.php">Donate</a> </li>
+                <li> <a href="PointSystem.php">Point System</a> </li>
+                <li> <a href="Merchandise.php">Merchandise</a> </li>
+                <li> <a href="RaceResults.php">Race Results</a> </li>
+                <li> <a href="ContactUs.php">Contact Us</a> </li>
+                <li> <a href="Cart.php">Cart</a> </li>
             </ul>
         </div>
 

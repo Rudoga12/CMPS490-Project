@@ -1,3 +1,8 @@
+<?php
+// Start the session
+session_start();
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,20 +16,29 @@
     
     <div class="banner">
         <div class="navbar">
-            <a href="Index.html"><img src="FIL Logomark_REVERSED_WEB.png" class="logo"></a>
+            <a href="Index.php"><img src="FIL Logomark_REVERSED_WEB.png" class="logo"></a>
             <ul>
-                <li> <a href="Index.html">Home</a> </li>
-                <li> <a href="MyAccount.html">My Account</a> </li>
-                <li> <a href="Donate.html">Donate</a> </li>
-                <li> <a href="RaceResults.html">Race Results</a> </li>
-                <li> <a href="Cart.html">Cart</a> </li>
+                <li> <a href="Index.php">Home</a> </li>
+                <?php
+                // Check if the user is logged in
+                if (isset($_SESSION['username'])) {
+                    // Display My Account with the username if logged in
+                    echo '<li> <a href="MyAccount.php?username=' . urlencode($_SESSION['username']) . '">My Account</a></li>';
+                } else {
+                    // Display the regular link if not logged in
+                    echo '<li> <a href="MyAccount.php">My Account</a></li>';
+                }
+                ?>
+                <li> <a href="Donate.php">Donate</a> </li>
+                <li> <a href="RaceResults.php">Race Results</a> </li>
+                <li> <a href="Cart.php">Cart</a> </li>
             </ul>
         </div>
 
         <div class="navbarfooter">
-            <a href="Index.html">About Us/Additional Info</a>
+            <a href="Index.php">About Us/Additional Info</a>
             <a href="https://www.cgi.com/en">Sponsor</a>
-            <a href="ContactUs.html">Contact</a>
+            <a href="ContactUs.php">Contact</a>
           </div>
 
         <div class="content">
