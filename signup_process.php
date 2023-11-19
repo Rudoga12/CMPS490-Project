@@ -23,6 +23,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
 
+    // Check if the username is already taken
+    $checkUsernameQuery = "SELECT * FROM UserTable WHERE userName = ?";
+    $checkUsernameStmt = $conn->prepare($checkUsernameQuery);
+    $checkUsernameStmt->bind_param("s", $usernameInput);
+    $checkUsernameStmt->execute();
+    $result = $checkUsernameStmt->get_result();
+
+    if ($result->num_rows > 0) {
+        echo "Username already taken. Please choose a different username.";
+        $checkUsernameStmt->close();
+        $conn->close();
+        exit();
+    }
+
     // Use prepared statements to prevent SQL injection
     $stmt = $conn->prepare("INSERT INTO UserTable (userName, userEmail, userPassword, userPoints) VALUES (?, ?, ?, 100)");
     $stmt->bind_param("sss", $usernameInput, $emailInput, $hashedPassword);
