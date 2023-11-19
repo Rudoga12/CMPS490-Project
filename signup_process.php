@@ -23,27 +23,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // SQL query to insert user data into the database
-    $sql = "INSERT INTO UserTable (userName, userEmail, userPassword, userPoints) VALUES ('$usernameInput', '$emailInput', '$hashedPassword', 100)";
+    // Use prepared statements to prevent SQL injection
+    $stmt = $conn->prepare("INSERT INTO UserTable (userName, userEmail, userPassword, userPoints) VALUES (?, ?, ?, 100)");
+    $stmt->bind_param("sss", $usernameInput, $emailInput, $hashedPassword);
 
-    if ($conn->query($sql) === TRUE) {
-        // Start the session
-        session_start();
-
-        // Store user information in the session
-        $_SESSION['username'] = $usernameInput;
-
-        // Set a cookie with the session ID
-        setcookie('session_id', session_id(), time() + (86400 * 30), '/'); // Cookie expires in 30 days
+    // Execute the statement
+    if ($stmt->execute()) {
+        // Set a cookie with the username
+        setcookie('username', $usernameInput, time() + (86400 * 30), '/'); // Cookie expires in 30 days
+        echo "Registration successful. You can now log in.";
 
         // Redirect to MyAccount.php with the 'username' parameter
-header("Location: MyAccount.php?username=" . urlencode($usernameInput));
+        header("Location: MyAccount.php?username=" . urlencode($usernameInput));
         exit();
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: " . $stmt->error;
     }
 
-    // Close the database connection
+    // Close the statement and the database connection
+    $stmt->close();
     $conn->close();
 }
 ?>
