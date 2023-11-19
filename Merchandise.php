@@ -34,6 +34,7 @@ if(isset($_SESSION['username'])) {
                     echo '<li> <a href="MyAccount.php">My Account</a> </li>';
                 }
                 ?>
+                <li> <a href="Events.html">Events</a> </li>
                 <li> <a href="Donate.php">Donate</a> </li>
                 <li> <a href="PointSystem.php">Point System</a> </li>
                 <li> <a href="Merchandise.php">Merchandise</a> </li>

@@ -34,6 +34,7 @@ if(isset($_SESSION['username'])) {
                     echo '<li> <a href="MyAccount.php">My Account</a> </li>';
                 }
                 ?>
+                <li> <a href="Events.html">Events</a> </li>
                 <li> <a href="Donate.php">Donate</a> </li>
                 <li> <a href="PointSystem.php">Point System</a> </li>
                 <li> <a href="Merchandise.php">Merchandise</a> </li>
@@ -42,6 +43,17 @@ if(isset($_SESSION['username'])) {
                 <li> <a href="Cart.php">Cart</a> </li>
             </ul>
         </div>
+        <div id="confettis">
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+          </div>
 
         <div class="content">
             <h1>This will help you keep track of your points and see what benefits you qualify for.</h1>

@@ -30,34 +30,47 @@ session_start();
                     echo '<li> <a href="MyAccount.php">My Account</a></li>';
                 }
                 ?>
+                <li> <a href="Events.html">Events</a> </li>
+                <li> <a href="MyAccount.php">My Account</a> </li>
                 <li> <a href="Donate.php">Donate</a> </li>
                 <li> <a href="RaceResults.php">Race Results</a> </li>
                 <li> <a href="Cart.php">Cart</a> </li>
             </ul>
         </div>
+        <div id="confettis">
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+          </div>
 
         <div class="navbarfooter">
-            <a href="Index.php">About Us/Additional Info</a>
+            <a href="AboutUs.html">About Us/Additional Info</a>
             <a href="https://www.cgi.com/en">Sponsor</a>
-            <a href="ContactUs.php">Contact</a>
+            <a href="ContactUs.html">Contact</a>
           </div>
 
         <section class="container content-section">
             <h2 class="section-header">MERCH</h2>
             <div class="shop-items">
                 <div class="shop-item">
-                    <span class="shop-item-title">T-Shirt</span>
-                    <img class="shop-item-image" src="hat.jpg">
+                    <span class="shop-item-title">5K T-Shirt</span>
+                    <img class="shop-item-image" src="shirt.jpg">
                     <div class="shop-item-details">
                         <span class="shop-item-price">$19.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
                 <div class="shop-item">
-                    <span class="shop-item-title">Coffee Cup</span>
-                    <img class="shop-item-image" src="hat.jpg">
+                    <span class="shop-item-title">5K Hat</span>
+                    <img class="shop-item-image" src="5khat.jpg">
                     <div class="shop-item-details">
-                        <span class="shop-item-price">$6.99</span>
+                        <span class="shop-item-price">$15.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
@@ -80,7 +93,6 @@ session_start();
         </section>
 
     </div>
-
     <main>
 
     </main>
