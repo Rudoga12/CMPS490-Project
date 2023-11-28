@@ -31,7 +31,6 @@ session_start();
                 }
                 ?>
                 <li> <a href="Events.html">Events</a> </li>
-                <li> <a href="MyAccount.php">My Account</a> </li>
                 <li> <a href="Donate.php">Donate</a> </li>
                 <li> <a href="RaceResults.php">Race Results</a> </li>
                 <li> <a href="Cart.php">Cart</a> </li>
@@ -47,13 +46,13 @@ session_start();
             <div class="confetti"></div>
             <div class="confetti"></div>
             <div class="confetti"></div>
-          </div>
+        </div>
 
         <div class="navbarfooter">
             <a href="AboutUs.html">About Us/Additional Info</a>
             <a href="https://www.cgi.com/en">Sponsor</a>
             <a href="ContactUs.html">Contact</a>
-          </div>
+        </div>
 
         <section class="container content-section">
             <h2 class="section-header">MERCH</h2>
@@ -91,8 +90,8 @@ session_start();
             </div>
             <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
         </section>
-
     </div>
+
     <main>
 
     </main>

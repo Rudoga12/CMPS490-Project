@@ -26,7 +26,7 @@ session_start();
                     $username = $_SESSION['username'];
                     echo "<li> <a href=\"MyAccount.php?username=" . urlencode($username) . "\">My Account</a></li>";
                 } else {
-                    echo "<li> <a href=\"login.html\">Log In</a></li>";
+                    //echo "<li> <a href=\"login.html\">Log In</a></li>";
                 }
                 ?>
                 <li> <a href="Events.html">Events</a> </li>

@@ -88,30 +88,46 @@ html, body {
     border-radius: 50%;
 }
 
-.main-footer {
-    background-color: #56CCF2;
-    color: white;
-    padding: .25em 0;
-}
-
-.main-footer-container {
+.navbarfooter {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: auto;
+    padding: 35px 0;
     display: flex;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.301);
+  }
+
+.navbarfooter a{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
 }
 
-.main-footer-container ul {
-    flex-grow: 1;
-    text-align: end;
+.navbarfooter a{
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
 }
 
-.footer-nav li {
-    padding: 0 .5em;
+.navbarfooter a::after{
+    content:'';
+    height: 3px;
+    width: 0;
+    background: #9000ff;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
 }
 
-.footer-nav img {
-    width: 30px;
-    height: 30px;
+.navbarfooter a:hover::after{
+    width: 100%;
 }
+
 
 .btn {
     text-align: center;
@@ -160,39 +176,6 @@ html, body {
     background-color: #2D9CDB;
 }
 
-.tour-row {
-    border-bottom: 1px solid black;
-    padding-bottom: 1em;
-    margin-bottom: 1em;
-}
-
-.tour-row:last-child {
-    border: none;
-}
-
-.tour-item {
-    display: inline-block;
-    padding-right: .5em;
-}
-
-.tour-date {
-    color: #555;
-    width: 11%;
-    font-weight: bold;
-}
-
-.tour-city {
-    width: 24%;
-}
-
-.tour-arena {
-    width: 42%;
-}
-
-.tour-btn {
-    max-width: 19%;
-}
-
 .shop-item {
     margin: 30px;
 }
@@ -209,6 +192,7 @@ html, body {
 
 .shop-item-image {
     height: 250px;
+    border-radius: 25px;
 }
 
 .shop-item-details {
@@ -351,6 +335,7 @@ html, body {
           background-position: 0% 50%;
       }
   }
+  
 
 .navbar{
     width: auto;
@@ -394,3 +379,107 @@ html, body {
 .navbar ul li:hover::after{
     width: 100%;
 }
+
+
+.wrapper {
+    overflow: hidden;
+  }
+  
+  .sliding-background {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/sliding-background-wwf.jpg") repeat-x;
+    height: 560px;
+    width: 5076px;
+    animation: slide 60s linear infinite;
+  }
+  
+  @keyframes slide{
+    0%{
+      transform: translate3d(0, 0, 0);
+    }
+    100%{
+      transform: translate3d(-1692px, 0, 0);
+    }
+  }
+
+  #confettis {
+    overflow: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  .confetti {
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    transform-origin: left top;
+    animation: confetti 5s ease-in-out -2s infinite;
+  }
+  @keyframes confetti {
+    0% {
+      transform: rotateZ(15deg) rotateY(0deg) translate(0, 0);
+    }
+    25% {
+      transform: rotateZ(5deg) rotateY(360deg) translate(-5vw, 20vh);
+    }
+    50% {
+      transform: rotateZ(15deg) rotateY(720deg) translate(5vw, 60vh);
+    }
+    75% {
+      transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw, 80vh);
+    }
+    100% {
+      transform: rotateZ(15deg) rotateY(1440deg) translate(10vw, 110vh);
+    }
+  }
+
+  .confetti:nth-child(1) {
+    left: 10%;
+    animation-delay: 0;
+    background-color: #fc0120;
+  }
+  .confetti:nth-child(2) {
+    left: 20%;
+    animation-delay: -5s;
+    background-color: #8257e6;
+  }
+  .confetti:nth-child(3) {
+    left: 30%;
+    animation-delay: -3s;
+    background-color: #ffbf4d;
+  }
+  .confetti:nth-child(4) {
+    left: 40%;
+    animation-delay: -2.5s;
+    background-color: #fe5d7a;
+  }
+  .confetti:nth-child(5) {
+    left: 50%;
+    animation-delay: -4s;
+    background-color: #45ec9c;
+  }
+  .confetti:nth-child(6) {
+    left: 60%;
+    animation-delay: -6s;
+    background-color: #f6e327;
+  }
+  .confetti:nth-child(7) {
+    left: 70%;
+    animation-delay: -1.5s;
+    background-color: #f769ce;
+  }
+  .confetti:nth-child(8) {
+    left: 80%;
+    animation-delay: -2s;
+    background-color: #007de7;
+  }
+  .confetti:nth-child(9) {
+    left: 90%;
+    animation-delay: -3.5s;
+    background-color: #63b4fc;
+  }
+  .confetti:nth-child(10) {
+    left: 100%;
+    animation-delay: -2.5s;
+    background-color: #f9c4ea;
+  }

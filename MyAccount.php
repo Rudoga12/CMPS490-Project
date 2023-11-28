@@ -12,11 +12,11 @@
     
     <div class="banner">
         <div class="navbar">
-            <a href="Index.html"><img src="FIL Logomark_REVERSED_WEB.png" class="logo"></a>
+            <a href="Index.php"><img src="FIL Logomark_REVERSED_WEB.png" class="logo"></a>
             <ul>
                 <li> <a href="Index.php">Home</a> </li>
                 <li> <a href="Events.html">Events</a> </li>
-                <li> <a href="MyAccount.php">My Account</a> </li>
+                <!-- <li> <a href="MyAccount.php">My Account</a> </li> -->
                 <li> <a href="Donate.php">Donate</a> </li>
                 <li> <a href="RaceResults.php">Race Results</a> </li>
                 <li> <a href="Cart.php">Cart</a> </li>
@@ -32,7 +32,7 @@
             <div class="confetti"></div>
             <div class="confetti"></div>
             <div class="confetti"></div>
-          </div>
+        </div>
 
         <div class="navbarfooter">
             <a href="AboutUs.html">About Us/Additional Info</a>
@@ -45,39 +45,53 @@
 
             <!-- Display user information here -->
             <?php
+            // Start the session
             session_start();
-            // Assuming you passed the username as a parameter in the URL
-            $userName = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : 'Guest';
 
-            // Database connection settings
-            $servername = "localhost"; // Your database server's IP address or hostname
-            $dbUsername = "root";      // Your MySQL username
-            $dbPassword = "fall23";    // Your MySQL password
-            $dbname = "users";         // Your database name
-
-            // Create a connection to the database
-            $conn = new mysqli($servername, $dbUsername, $dbPassword, $dbname);
-
-            // Check the connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
+            // Check if the username is set in the session
+            if (!isset($_SESSION['username']) && isset($_COOKIE['username'])) {
+                // If the session username is not set but the cookie exists, set the session variable
+                $_SESSION['username'] = $_COOKIE['username'];
             }
 
-            // Fetch user points from the database
-            $sql = "SELECT userPoints FROM UserTable WHERE userName = '$userName'";
-            $result = $conn->query($sql);
+            if (isset($_SESSION['username'])) {
+                $userName = $_SESSION['username'];
 
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                $userPoints = $row['userPoints'];
+                // Database connection settings
+                $servername = "localhost"; // Your database server's IP address or hostname
+                $dbUsername = "root";      // Your MySQL username
+                $dbPassword = "fall23";    // Your MySQL password
+                $dbname = "users";         // Your database name
 
-                echo "<p>Welcome, $userName! You have $userPoints points.</p>";
+                // Create a connection to the database
+                $conn = new mysqli($servername, $dbUsername, $dbPassword, $dbname);
+
+                // Check the connection
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+
+                // Fetch user points from the database
+                $sql = "SELECT userPoints FROM UserTable WHERE userName = '$userName'";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    $userPoints = $row['userPoints'];
+
+                    echo "<p>Welcome back, $userName! You have $userPoints points.</p>";
+                } else {
+                    echo "Error fetching user information.";
+                }
+
+                // Close the database connection
+                $conn->close();
             } else {
-                echo "Error fetching user information.";
-            }
+                // Debug statement
+                echo "<p>Debug: Session username is not set.</p>";
 
-            // Close the database connection
-            $conn->close();
+                echo "<p>Welcome, Guest! Please log in to view your account.</p>";
+            }
             ?>
         </div>
     </div>
