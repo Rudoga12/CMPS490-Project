@@ -29,7 +29,7 @@ session_start();
                     //echo "<li> <a href=\"login.html\">Log In</a></li>";
                 }
                 ?>
-                <li> <a href="Events.html">Events</a> </li>
+                <li> <a href="Events.php">Events</a> </li>
                 <li> <a href="Donate.php">Donate</a> </li>
                 <li> <a href="RaceResults.php">Race Results</a> </li>
                 <li> <a href="Cart.php">Cart</a> </li>
@@ -48,7 +48,7 @@ session_start();
           </div>
 
         <div class="navbarfooter">
-            <a href="AboutUs.html">About Us/Additional Info</a>
+            <a href="AboutUs.php">About Us/Additional Info</a>
             <a href="https://www.cgi.com/en">Sponsor</a>
             <a href="ContactUs.php">Contact</a>
         </div>  
@@ -58,7 +58,8 @@ session_start();
             <p>Walk, jog or run through the historic tree-lined streets of downtown Lafayette on the Saturday morning of Festival International. <br> Cross the finish line with live music, food, and beer! </p>
             
             <div>
-                <button type="button"><span></span>LOG IN</button>
+                <!--<button type="button"><span></span>LOG IN</button>
+            -->
                 <a href="signup.html" >
                     <button type="button"><span></span>SIGN UP</button>
                 </a>

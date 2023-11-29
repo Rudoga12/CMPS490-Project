@@ -12,14 +12,14 @@
     
     <div class="banner">
         <div class="navbar">
-            <a href="Index.html"><img src="FIL Logomark_REVERSED_WEB.png" class="logo"></a>
+            <a href="Index.php"><img src="FIL Logomark_REVERSED_WEB.png" class="logo"></a>
             <ul>
-                <li> <a href="Index.html">Home</a> </li>
-                <li> <a href="Events.html">Events</a> </li>
-                <li> <a href="MyAccount.html">My Account</a> </li>
-                <li> <a href="Donate.html">Donate</a> </li>
-                <li> <a href="RaceResults.html">Race Results</a> </li>
-                <li> <a href="Cart.html">Cart</a> </li>
+                <li> <a href="Index.php">Home</a> </li>
+                <li> <a href="Events.php">Events</a> </li>
+                <li> <a href="MyAccount.php">My Account</a> </li>
+                <li> <a href="Donate.php">Donate</a> </li>
+                <li> <a href="RaceResults.php">Race Results</a> </li>
+                <li> <a href="Cart.php">Cart</a> </li>
 
             </ul>
         </div>
@@ -36,14 +36,16 @@
           </div>
 
         <div class="navbarfooter">
-            <a href="AboutUs.html">About Us/Additional Info</a>
+            <a href="AboutUs.php">About Us/Additional Info</a>
             <a href="https://www.cgi.com/en">Sponsor</a>
-            <a href="ContactUs.html">Contact</a>
+            <a href="ContactUs.php">Contact</a>
           </div>  
 
         <div class="content">
-            <h1>Event Schedule</h1>
-            <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FChicago&title=FIL%20Event%20Schedule&src=Y29sbGlucm9zc3JleW5vbGRzNDdAZ21haWwuY29t&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%237986CB&color=%2333B679&color=%230B8043" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            <h1>Festival International</h1>
+            <h2>Festival International de Louisiane is a premiere International music and arts festival known for bringing a variety of unique and emerging  performers to Louisiana. 
+                <br>The 501 (C) (3) organization is committed to maintaining the festival as non-ticketed and free to the general public.</br>  
+                The family-oriented event is held each year in downtown Lafayette,  Louisiana. Our loyal audience, comprised of local, national and  international patrons, return year after year.</h2>
         </div>
 
 

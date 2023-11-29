@@ -35,7 +35,7 @@
             <a href="Index.php"><img src="FIL Logomark_REVERSED_WEB.png" class="logo"></a>
             <ul>
                 <li> <a href="Index.php">Home</a> </li>
-                <li> <a href="Events.html">Events</a> </li>
+                <li> <a href="Events.php">Events</a> </li>
                 <!-- <li> <a href="MyAccount.php">My Account</a> </li> -->
                 <li> <a href="Donate.php">Donate</a> </li>
                 <li> <a href="RaceResults.php">Race Results</a> </li>
@@ -55,9 +55,9 @@
         </div>
 
         <div class="navbarfooter">
-            <a href="AboutUs.html">About Us/Additional Info</a>
+            <a href="AboutUs.php">About Us/Additional Info</a>
             <a href="https://www.cgi.com/en">Sponsor</a>
-            <a href="ContactUs.html">Contact</a>
+            <a href="ContactUs.php">Contact</a>
         </div>
 
         <div class="content">
