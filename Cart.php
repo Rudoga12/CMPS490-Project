@@ -4,7 +4,7 @@ session_start();
 ?>
 
 <html lang="en">
-<head>
+<<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -36,7 +36,7 @@ session_start();
                 <li> <a href="Cart.php">Cart</a> </li>
             </ul>
         </div>
-        <div id="confettis">
+        <!--<div id="confettis">
             <div class="confetti"></div>
             <div class="confetti"></div>
             <div class="confetti"></div>
@@ -47,12 +47,14 @@ session_start();
             <div class="confetti"></div>
             <div class="confetti"></div>
         </div>
+            -->
+            
 
         <div class="navbarfooter">
             <a href="AboutUs.html">About Us/Additional Info</a>
             <a href="https://www.cgi.com/en">Sponsor</a>
             <a href="ContactUs.html">Contact</a>
-        </div>
+          </div>
 
         <section class="container content-section">
             <h2 class="section-header">MERCH</h2>
@@ -90,8 +92,8 @@ session_start();
             </div>
             <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
         </section>
-    </div>
 
+    </div>
     <main>
 
     </main>

@@ -72,19 +72,20 @@
                 }
 
                 // Fetch user points from the database
-                $sql = "SELECT userPoints FROM UserTable WHERE userName = '$userName'";
-                $result = $conn->query($sql);
+                $sql = "SELECT userPoints FROM UserTable WHERE userName = ?";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("s", $userName);
+                $stmt->execute();
+                $stmt->bind_result($userPoints);
 
-                if ($result->num_rows > 0) {
-                    $row = $result->fetch_assoc();
-                    $userPoints = $row['userPoints'];
-
-                    echo "<p>Welcome back, $userName! You have $userPoints points.</p>";
+                if ($stmt->fetch()) {
+                    echo "<p>Welcome back, " . htmlspecialchars($userName, ENT_QUOTES, 'UTF-8') . "! You have $userPoints points.</p>";
                 } else {
-                    echo "Error fetching user information.";
+                    echo "Please Sign Up to Access Your Account.";
                 }
 
                 // Close the database connection
+                $stmt->close();
                 $conn->close();
             } else {
                 // Debug statement
