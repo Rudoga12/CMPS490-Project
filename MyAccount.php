@@ -6,10 +6,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="FIL Logomark_REVERSED_WEB.png">
     <link rel="stylesheet" href="style.css">
-    <title>My Account</title>
+    <title>
+        <?php
+        // Start the session
+        session_start();
+
+        // Check if the username is set in the session
+        if (!isset($_SESSION['username']) && isset($_COOKIE['username'])) {
+            // If the session username is not set but the cookie exists, set the session variable
+            $_SESSION['username'] = $_COOKIE['username'];
+        }
+
+        // Check if the user is logged in
+        if (isset($_SESSION['username'])) {
+            // Display the user's name as the title if logged in
+            echo htmlspecialchars($_SESSION['username'], ENT_QUOTES, 'UTF-8') . "'s Account";
+        } else {
+            // Display a default title if not logged in
+            echo "My Account";
+        }
+        ?>
+    </title>
 </head>
 <body>
-    
+
     <div class="banner">
         <div class="navbar">
             <a href="Index.php"><img src="FIL Logomark_REVERSED_WEB.png" class="logo"></a>
@@ -41,19 +61,21 @@
         </div>
 
         <div class="content">
-            <h1>My Account</h1>
+            <h1>
+                <?php
+                // Check if the user is logged in
+                if (isset($_SESSION['username'])) {
+                    // Display the user's name if logged in
+                    echo "Welcome back, " . htmlspecialchars($_SESSION['username'], ENT_QUOTES, 'UTF-8') . "!";
+                } else {
+                    // Display a default title if not logged in
+                    echo "My Account";
+                }
+                ?>
+            </h1>
 
             <!-- Display user information here -->
             <?php
-            // Start the session
-            session_start();
-
-            // Check if the username is set in the session
-            if (!isset($_SESSION['username']) && isset($_COOKIE['username'])) {
-                // If the session username is not set but the cookie exists, set the session variable
-                $_SESSION['username'] = $_COOKIE['username'];
-            }
-
             if (isset($_SESSION['username'])) {
                 $userName = $_SESSION['username'];
 
@@ -79,7 +101,7 @@
                 $stmt->bind_result($userPoints);
 
                 if ($stmt->fetch()) {
-                    echo "<p>Welcome back, " . htmlspecialchars($userName, ENT_QUOTES, 'UTF-8') . "! You have $userPoints points.</p>";
+                    echo "<p>You have $userPoints points.</p>";
                 } else {
                     echo "Please Sign Up to Access Your Account.";
                 }
@@ -89,9 +111,9 @@
                 $conn->close();
             } else {
                 // Debug statement
-                echo "<p>Debug: Session username is not set.</p>";
+                echo "<p>Account Not Made.</p>";
 
-                echo "<p>Welcome, Guest! Please log in to view your account.</p>";
+                echo "<p>Please Sign Up to Access Your Account.</p>";
             }
             ?>
         </div>
