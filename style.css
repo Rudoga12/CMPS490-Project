@@ -261,6 +261,131 @@ button:hover{
     transition: 0.5s;
 }
 
+h2{
+    font-weight: bolder;
+    font-family: sans-serif;
+}
+
+.secfirst:hover:before{
+    content: "Sonya Hsu";
+}
+
+.secsecond:hover:before{
+    content: "Nicholas Lipari";
+}
+
+.secthird:hover:before{
+    content: "Brian West";
+}
+
+.secfirst:before{
+    content: "First";
+}
+
+.secsecond:before{
+    content: "Second";
+}
+
+.secthird:before{
+    content: "Third";
+}
+
+.secfirst span{
+    background: #aca106;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.secsecond span{
+    background: #727272;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.secthird span{
+    background: #d46012;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.thifirst:hover:before{
+    content: "Angie Verret";
+}
+
+.thisecond:hover:before{
+    content: "Diane Harris";
+}
+
+.thithird:hover:before{
+    content: "Max Arceneaux";
+}
+
+.thifirst:before{
+    content: "First";
+}
+
+.thisecond:before{
+    content: "Second";
+}
+
+.thithird:before{
+    content: "Third";
+}
+
+.thifirst span{
+    background: #aca106;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.thisecond span{
+    background: #727272;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.thithird span{
+    background: #d46012;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
 body {
     justify-content: center;
     align-items: center;

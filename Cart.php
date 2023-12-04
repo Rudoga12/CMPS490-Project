@@ -33,10 +33,12 @@ session_start();
                 <li> <a href="Events.php">Events</a> </li>
                 <li> <a href="Donate.php">Donate</a> </li>
                 <li> <a href="RaceResults.php">Race Results</a> </li>
-                <li> <a href="Cart.php">Cart</a> </li>
+                <li> <a href="Cart.php">Merch</a> </li>
             </ul>
         </div>
-        <!--<div id="confettis">
+        <h1>For every 1,000 points you earn, you get a free piece of merch!</h1>
+        <!--
+        <div id="confettis">
             <div class="confetti"></div>
             <div class="confetti"></div>
             <div class="confetti"></div>
@@ -48,12 +50,11 @@ session_start();
             <div class="confetti"></div>
         </div>
             -->
-            
-
         <div class="navbarfooter">
             <a href="AboutUs.php">About Us/Additional Info</a>
-            <a href="https://www.cgi.com/en">Sponsor</a>
             <a href="ContactUs.php">Contact</a>
+            <a href="https://www.cgi.com/en" target="_blank">Sponsor</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKNZlrm3AM-yk55BQkzNKZSwdTEm7YwIxkfixDckpmgrdZ3g/viewform?usp=sf_link" target="_blank">Volunteer</a>
           </div>
 
         <section class="container content-section">

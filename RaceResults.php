@@ -37,7 +37,7 @@ if(isset($_SESSION['username'])) {
                 <li> <a href="Events.php">Events</a> </li>
                 <li> <a href="Donate.php">Donate</a> </li>
                 <li> <a href="RaceResults.php">Race Results</a> </li>
-                <li> <a href="Cart.php">Cart</a> </li>
+                <li> <a href="Cart.php">Merch</a> </li>
             </ul>
         </div>
         <div id="confettis">
@@ -54,18 +54,34 @@ if(isset($_SESSION['username'])) {
 
         <div class="navbarfooter">
             <a href="AboutUs.php">About Us/Additional Info</a>
-            <a href="https://www.cgi.com/en">Sponsor</a>
             <a href="ContactUs.php">Contact</a>
+            <a href="https://www.cgi.com/en" target="_blank">Sponsor</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKNZlrm3AM-yk55BQkzNKZSwdTEm7YwIxkfixDckpmgrdZ3g/viewform?usp=sf_link" target="_blank">Volunteer</a>
           </div>
 
         <div class="content">
-            <h1>Last Year's Winners!</h1>
-            <p>Take a look at the previous 5k's top runners.</p>
+            <h1>The Winner's Circle!</h1>
+            <p>Take a look at previous 5k's top runners.</p>
             
             <div class="results">
+                <h2>2023</h2>
                 <button class="first" type="button"><span></span></button>
                 <button class="second" type="button"><span></span></button>
                 <button class="third" type="button"><span></span></button>
+            </div>
+
+            <div class="2022results">
+                <h2>2022</h2>
+                <button class="secfirst" type="button"><span></span></button>
+                <button class="secsecond" type="button"><span></span></button>
+                <button class="secthird" type="button"><span></span></button>
+            </div>
+
+            <div class="2021results">
+                <h2>2021</h2>
+                <button class="thifirst" type="button"><span></span></button>
+                <button class="thisecond" type="button"><span></span></button>
+                <button class="thithird" type="button"><span></span></button>
             </div>
         </div>
 
