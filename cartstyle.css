@@ -95,7 +95,7 @@ html, body {
     bottom: 0;
     width: 100%;
     margin: auto;
-    padding: 35px 0;
+    padding: 10px 0;
     display: flex;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.301);
@@ -315,6 +315,10 @@ html, body {
     display: block;
     margin: 40px auto 80px auto;
     font-size: 1.75em;
+}
+.btn-purchase-sm{
+    font-size: 1.5em;
+    padding: 0.5em 1em;
 }
 html, body {
     width: 100%;
