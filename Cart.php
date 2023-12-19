@@ -3,7 +3,7 @@
 
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+/*if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['action']) && $_POST['action'] === 'addToCart') {
         addToCart($_POST['title'], $_POST['price'], $_POST['image']);
         echo json_encode(['success' => true]);
@@ -36,6 +36,7 @@ function addToCart($title, $price, $image) {
 
     $_SESSION['cart'][] = $item;
 }
+*/
 
 ?>
 
@@ -109,33 +110,35 @@ function addToCart($title, $price, $image) {
                 <span class="cart-quantity cart-header cart-column">QUANTITY</span>
             </div>
             <div class="cart-items">
-                <?php
+                <!--<?php
                 // Display items in the cart
-                if (isset($_SESSION['cart'])) {
-                    foreach ($_SESSION['cart'] as $item) {
-                        echo '<div class="cart-row">
-                                <span class="cart-item cart-column">' . $item['title'] . '</span>
-                                <span class="cart-price cart-column">' . $item['price'] . '</span>
-                                <span class="cart-quantity cart-column">' . $item['quantity'] . '</span>
-                            </div>';
-                    }
-                }
+               // if (isset($_SESSION['cart'])) {
+                 //   foreach ($_SESSION['cart'] as $item) {
+                   //     echo '<div class="cart-row">
+                     //           <span class="cart-item cart-column">' . $item['title'] . '</span>
+                       //         <span class="cart-price cart-column">' . $item['price'] . '</span>
+                         //       <span class="cart-quantity cart-column">' . $item['quantity'] . '</span>
+                           // </div>';
+                    //}
+                //}
                 ?>
+                -->
             </div>
             <div class="cart-total">
                 <strong class="cart-total-title">Total</strong>
                 <span class="cart-total-price">
-                    <?php
+                  <!--  <?php
                     // Calculate and display the total price
-                    $totalPrice = 0;
-                    if (isset($_SESSION['cart'])) {
-                        foreach ($_SESSION['cart'] as $item) {
-                            $totalPrice += $item['price'] * $item['quantity'];
-                        }
-                    }
-                    echo '$' . number_format($totalPrice, 2);
+                    //$totalPrice = 0;
+                    //if (isset($_SESSION['cart'])) {
+                       // foreach ($_SESSION['cart'] as $item) {
+                         //   $totalPrice += $item['price'] * $item['quantity'];
+                        //}
+                  //  }
+                    //echo '$' . number_format($totalPrice, 2);
                     ?>
                 </span>
+                -->
             </div>
             <button class="btn btn-primary btn-purchase btn-purchase -sm" type="button">PURCHASE</button>
         </section>
@@ -150,7 +153,7 @@ function addToCart($title, $price, $image) {
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script>
+   <!-- <script>
         function addToCartClicked(title, price, image) {
             // Use AJAX to send the data to server (addToCart function)
             var xhr = new XMLHttpRequest();
@@ -169,5 +172,6 @@ function addToCart($title, $price, $image) {
             xhr.send("action=addToCart&title=" + encodeURIComponent(title) + "&price=" + encodeURIComponent(price) + "&image=" + encodeURIComponent(image));
         }
     </script>
+    -->
 </body>
 </html>

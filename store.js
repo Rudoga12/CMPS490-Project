@@ -55,7 +55,9 @@ function addToCartClicked(event) {
     var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText;
     var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText;
     var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src;
-
+    addItemToCart(title, price, imageSrc)
+    updateCartTotal()
+/*
     // Ajax request to add item to cart
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'cart.php', true);
@@ -71,6 +73,8 @@ function addToCartClicked(event) {
     xhr.send('action=addToCart&title=' + encodeURIComponent(title) +
         '&price=' + encodeURIComponent(price) +
         '&image=' + encodeURIComponent(imageSrc));
+}
+*/
 }
 
 function addItemToCart(title, price, imageSrc) {
